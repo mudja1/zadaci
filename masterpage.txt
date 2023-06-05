@@ -1,0 +1,29 @@
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#4b6c9e">
+            <div class="container" style="padding-top:20px;padding-bottom:20px">
+
+                <div class="navbar-header" style="margin-bottom:-10px">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/program.aspx" style="color:white;border-right:solid white 2px;line-height:40px;margin-top:-20px;margin-right:100px;margin-bottom:-60px">Zadatak 14</a>
+                    <a class="navbar-brand" runat="server" href="~/program.aspx" style="color:white;margin-top:-10px;padding-left:125px">Tv program</a>
+                </div>
+            </div>
+        </div>
+
+-----------------------------------------------------------------------
+<footer  style="position:fixed;bottom:0;width:100%">
+                <div class="container-fluid" style="background-color:#4b6c9e">
+                    <div class="container">
+                        <p style="color:white;padding:5px;margin-top:10px;float:left">Elektrotehnicka i gradjevinska skola "Nikola Tesla" Nis</p>
+                        <a  class="navbar-brand" runat="server" href="~/kontakt.aspx" style="color:white;float:right;padding:5px;margin-top:10px;margin-right:-15px;text-decoration:underline">
+                             Kontakt
+                        </a>
+                        <a class="navbar-brand" runat="server" href="~/uputstvo.aspx" style="color:white;float:right;padding:5px;margin-top:10px;text-decoration:underline">
+                                                        Uputstvo
+                        </a>
+                    </div>
+                </div>
+            </footer>
