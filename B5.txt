@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звуци инструмената</title>
+    <link rel="stylesheet" href="css/css.css">
+    <script src="java/java.js"></script>
+</head>
+<body>
+    <h1>ОСНОВНА ШКОЛА "СОЊА МАРИНКОВИЋ"</h1>
+
+    <ul>
+        <li><a href="Pocetna.html">Почетна</a></li>
+        <li><a href="O autoru.html">O aутору</a></li>
+        <li><a href="Uputstvo.html">Упутство</a></li>
+        </ul>
+        <h2>Звуци инструмената</h2><br>
+
+        <p class="verticalno">МУЗИЧКА<br> КУЛТУРА</p>
+    <table class="centar"  >
+    <tr>
+        <td id="j">Назив инструмента</td>
+        <td id="j">Слика инструмента</td>
+        <td id="j">Звук инструмента</td>
+    </tr>
+    <tr>
+        <td>ГИТАРА</td>
+        <td><a href="https://sr.wikipedia.org/wiki/Гитара" target="_blank"><img src="slike/Gitara.jpg" alt=""></a> </td>
+        <td><img src="slike/zvucnik.jpg" alt="" onmouseover="PlaySound('Gitara')" onmouseout="StopSound('Gitara')"><br>
+        <a href="" onclick="Gitara()">Сазнај више</a></td>
+    </tr>
+    <tr>
+        <td>ВИОЛИНА</td>
+        <td><a href="https://sr.wikipedia.org/wiki/Виолина" target="_blank"><img src="slike/Violina.jpg" alt=""></a></td>
+        <td> <img src="slike/zvucnik.jpg" alt="" onmouseover="PlaySound('Violina')" onmouseout="StopSound('Violina')"><br>
+            <a href="" onclick="Violina()">Сазнај више</a></td>
+    </tr>
+    <tr>
+        <td>КЛАВИР</td>
+        <td><a href="https://sr.wikipedia.org/wiki/Клавир" target="_blank"><img src="slike/Klavir.jpg" alt=""></a></td>
+        <td> <img src="slike/zvucnik.jpg" alt=""  onmouseover="PlaySound('Klavir')" onmouseout="StopSound('Klavir')"><br>
+            <a href="" onclick="Klavir()">Сазнај више</a></td>
+    </tr>
+    <tr>
+        <td>БУБЊЕВИ</td>
+        <td><a href="https://sr.wikipedia.org/wiki/Бубњеви" target="_blank"><img src="slike/Bubnjevi.jpg" alt=""></a></td>
+        <td> <img src="slike/zvucnik.jpg" alt=""onmouseover="PlaySound('Bubnjevi')" onmouseout="StopSound('Bubnjevi')" ><br>
+            <a href="" onclick="Bubnjevi()">Сазнај више</a></td>
+    </tr>
+    <tr>
+        <td>ХАРМОНИКА</td>
+        <td><a href="https://sr.wikipedia.org/wiki/Хармоника" target="_blank"><img src="slike/Harmonika.jpg" alt=""></a></td>
+        <td> <img src="slike/zvucnik.jpg" alt="" onmouseover="PlaySound('Harmonika')" onmouseout="StopSound('Harmonika')"><br>
+            <a href="" onclick="Harmonika()">Сазнај више</a></td>
+    </tr>
+    <tr>
+        <td>КОНТРАФАГОТ</td>
+        <td><a href="https://sr.wikipedia.org/wiki/Контрафагот" target="_blank"><img src="slike/Kontrafagot.jpg" alt=""></a></td>
+        <td><img src="slike/zvucnik.jpg" alt="" onmouseover="PlaySound('Kontrafagot')" onmouseout="StopSound('Kontrafagot')"><br>
+            <a href="" onclick="Kontrafagot()">Сазнај више</a></td>
+    </tr>
+</table>
+<div id="footer" >  
+    Copyright © Основна школа "Соња Маринковић"
+</div>
+
+<audio id='Gitara' src='zvukovi/Gitara.mp3'>
+    <audio id='Violina' src='zvukovi/Violina.mp3'>
+    <audio id='Klavir' src='zvukovi/Klavir.mp3'>
+        <audio id='Bubnjevi' src='zvukovi/Bubnjevi.mp3'>
+    <audio id='Harmonika' src="zvukovi/Harmonika.mp3">
+    <audio id='Kontrafagot' src='zvukovi/Kontrafagot.mp3'>
+      
+        
+</body>
+</html>
+css
+ul{
+  text-align: center; 
+  background-color: rgb(160, 250, 172);
+}
+ul li{list-style: none; display: inline-block;
+
+}
+ul a{
+  color: green; display: block; font-family:arial; text-transform: uppercase; font-weight: bold; margin: 0; padding: 9px 18px 9px; text-decoration: none; 
+}
+ul a:hover{
+  background-color: rgb(35, 82, 42);
+  color: rgb(248, 248, 120);
+}
+    body, html {
+        height: 100%;
+        margin: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgb(253, 255, 145);
+      }
+    h1,h2{
+        color:#2a6303;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+    .centar{
+      justify-content: center;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      width: 30%;
+    }
+    table{
+      margin-bottom: 20px;
+      
+    }
+    table,tr,td{
+        border: 2px solid rgb(228, 250, 188);
+        border-collapse: collapse;
+        font-size: large;
+    }
+    tr,td{
+      padding: 8px;
+      background-color: #a2ee84;
+      text-align: center;
+      font-weight: bold;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    #j{
+      background-color: #2c5e08;
+      color: #ebe973;
+    }
+    img{
+
+      width: 50px;
+      height: 50px;
+    }
+    .verticalno{
+      writing-mode: vertical-lr;
+    text-orientation: upright;
+    position: absolute;
+    font-size: 80px;
+    left: 300px;
+    text-shadow: 2px 2px 1px black;
+    color: #2c5e08;
+    }
+    #footer{
+    
+      bottom: 0;
+         text-align: center;
+         color: palegoldenrod;
+         width: 100%;
+         height: 30px;
+         text-align: center;
+         color: palegoldenrod;
+         background-color:rgb(35, 82, 42) ;
+     }
+java
+function PlaySound(soundobj) {
+    var thissound=document.getElementById(soundobj);
+    thissound.play();
+}
+function StopSound(soundobj) {
+    var thissound=document.getElementById(soundobj);
+    thissound.pause();
+    thissound.currentTime = 0;
+}
+function Gitara() {
+    window.open(
+      "stranice/Gitara.html","mywindow","height=200;width=200");
+}
+
+function Violina() {
+    window.open(
+      "stranice/Violina.html","mywindow","height=200;width=200");
+}
+
+function Klavir() {
+    window.open(
+      "stranice/Klavir.html","mywindow","height=200;width=200");
+}
+
+function Bubnjevi() {
+    window.open(
+      "stranice/Bubnjevi.html","mywindow","height=200;width=200");
+}
+
+function Harmonika() {
+    window.open(
+      "stranice/Harmonika.html","mywindow","height=200;width=200");
+}
+
+function Kontrafagot() {
+    window.open(
+      "stranice/Kontrafagot.html","mywindow","height=200;width=200");
+}
