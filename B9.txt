@@ -1,0 +1,126 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.IO;
+namespace _1
+{
+    public partial class _Default : Page
+    {
+        DataTable table = new DataTable();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            table.Columns.Add("Izvodjac", typeof(string));
+            table.Columns.Add("Naziv albuma", typeof(string));
+            table.Columns.Add("Zanr", typeof(string));
+            table.Columns.Add("Godina izdavanja", typeof(string));
+            table.Columns.Add("Izdavacka kuca", typeof(string));
+            table.Columns.Add("Slika omota", typeof(string));
+      
+            string putanja = Server.MapPath("~/Tekst1/text.txt");
+            string[] podaci = File.ReadAllLines(putanja);
+            foreach (string p in podaci)
+            {
+                string[] kolone = p.Split('|');
+                table.Rows.Add(kolone);
+            }
+            GridView1.DataSource = table;
+            GridView1.DataBind();
+            List<string> zanr = new List<string>();
+            foreach (string p in podaci)
+            {
+                string[] kolone = p.Split('|');
+                zanr.Add(kolone[2]);
+            }
+            DropDownList1.Items.Add(new ListItem(String.Empty, "-1"));
+            foreach (string z in zanr)
+            {
+                ListItem item = new ListItem(z);
+                if (!DropDownList1.Items.Contains(item))
+                {
+                    DropDownList1.Items.Add(item);
+                }
+            }
+            List<string> godine = new List<string>();
+            foreach (string p in podaci)
+            {
+                string[] kolone = p.Split('|');
+                godine.Add(kolone[3]);
+            }
+          DropDownList2.Items.Add(new ListItem(String.Empty, "-1"));
+            foreach (string g in godine)
+            {
+                ListItem item = new ListItem(g);
+                if (!DropDownList2.Items.Contains(item))
+                {
+                    DropDownList2.Items.Add(item);
+                }
+            }
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            List<string> zanr = new List<string>();
+            List<string> godina = new List<string>();
+            DataTable table = new DataTable();
+            table.Columns.Add("Izvodjac", typeof(string));
+            table.Columns.Add("Naziv albuma", typeof(string));
+            table.Columns.Add("Zanr", typeof(string));
+            table.Columns.Add("Godina izdavanja", typeof(string));
+            table.Columns.Add("Izdavacka kuca", typeof(string));
+            table.Columns.Add("Slika omota", typeof(string));
+
+            string putanja = Server.MapPath("~/Tekst1/text.txt");
+            string[] line = File.ReadAllLines(putanja);
+
+            foreach (string s in line)
+            {
+                string[] kolona = s.Split('|');
+                table.Rows.Add(kolona);
+                zanr.Add(kolona[2]);
+                godina.Add(kolona[3]);
+
+            }
+            foreach (string z in zanr)
+            {
+                ListItem n = new ListItem(z);
+                if (!DropDownList1.Items.Contains(n))
+                {
+                    DropDownList1.Items.Add(n);
+                }
+            }
+            foreach (string g in godina)
+            {
+                ListItem n = new ListItem(g);
+                if (!DropDownList2.Items.Contains(n))
+                {
+                    DropDownList2.Items.Add(n);
+                }
+            }
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (!table.Rows[i][0].ToString().Contains(TextBox1.Text) ||
+                    !table.Rows[i][1].ToString().Contains(TextBox2.Text) ||
+                    !table.Rows[i][2].ToString().Contains(DropDownList1.SelectedItem.Text) ||
+                    !table.Rows[i][3].ToString().Contains(DropDownList2.SelectedItem.Text) ||
+                    !table.Rows[i][4].ToString().Contains(TextBox3.Text))
+                {
+                    table.Rows.RemoveAt(i);
+                    i--;
+                }
+            }
+
+            GridView1.DataSource = table;
+            GridView1.DataBind();
+        }
+    }
+}
