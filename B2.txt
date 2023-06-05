@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css.css">
+    <script src="java/js.js"></script>
+    <title>Домаће животиње</title>
+    <style>
+        .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+    </style>
+</head>
+<body style="background-image: url('slike/Farma.jpg');">
+    <div id="Naslov">
+        <h2>Домаће животиње</h2>
+    </div>
+    <div id="Navbar">
+        <ul>
+            <li><a href="Index.html">Почетна</a></li>
+            <li><a href="O autoru.html">O aутору</a></li>
+            <li><a href="Uputstvo.html">Упутство</a></li>
+        </ul>  
+    </div>
+    <div id="Slike">
+        <p>
+            <img src="slike/Pas.jpg" alt="Pas" onmouseover="dobijanjezvuka('Pas')" onclick="stisni('Pas')">
+            <img src="slike/Patka.jpg" alt="Patka" onmouseover="dobijanjezvuka('Patka')" onclick="stisni('Patka')">
+            <img src="slike/Macka.jpg" alt="Macka" onmouseover="dobijanjezvuka('Macka')" onclick="stisni('Macka')">
+            <img src="slike/Pile.jpg" alt="Pile" onmouseover="dobijanjezvuka('Pile')" onclick="stisni('Pile')">
+            <img src="slike/Krava.jpg" alt="Krava" onmouseover="dobijanjezvuka('Krava')" onclick="stisni('Krava')">
+        </p>
+    </div>
+    <div id="footer">  
+        <p>Copyright © Предшколска установа "Срећно дете"</p>
+    </div>
+    
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css.css">
+    <script src="java/js.js"></script>
+    <title>Uputstvo</title>
+    <style>
+        .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+    </style>
+</head>
+
+    <body style="background-image: url('slike/Farma.jpg');">
+        <div id="Naslov">
+            <h2>О аутору</h2>
+        </div>
+        <ul style="margin-top: 40px;">
+            <li><a href="Index.html">Почетна</a></li>
+            <li><a href="O autoru.html">O aутору</a></li>
+            <li><a href="Uputstvo.html">Упутство</a></li>
+        </ul>  
+    </div>
+    <div id="Naslov">
+        <h2 style="color:palegoldenrod;text-align: center;">Нађа Јакшић E44</h2>
+    </div>
+    <div id="footer">  
+        <p>Copyright © Предшколска установа "Срећно дете"</p>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css.css">
+    <script src="java/js.js"></script>
+    <title>O autoru</title>
+    
+</head>
+<body style="background-image: url('slike/Farma.jpg');">
+    <div id="Naslov">
+        <h2>Упутство</h2>
+    </div>
+    <ul style="margin-top: 40px;">
+        <li><a href="Index.html">Почетна</a></li>
+        <li><a href="O autoru.html">O aутору</a></li>
+        <li><a href="Uputstvo.html">Упутство</a></li>
+    </ul>  
+</div>
+
+
+    <div id="Naslov">
+        <h1 style="margin-top:50px ;color: palegoldenrod;">Кликом на слику животиње добићете кратак опис исте,а преласком миша преко слике и звук оглашавања животиње.</h2>
+    </div>
+    <div id="footer">  
+        <p>Copyright © Предшколска установа "Срећно дете"</p>
+    </div>
+</body>
+</html>
+css
+body{
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+h2{
+    color: palegoldenrod;
+}
+ul{
+    display: inline;
+    margin: 0px;
+    padding:0px;
+}
+li{
+    display: inline;
+    margin: 0px;
+    padding:0px;
+}
+a{
+    text-decoration: none;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+   color:rgb(100, 11, 45) ;
+   background-color:palegoldenrod;
+}
+a:hover{
+   color: palegoldenrod;
+   background-color: rgb(100, 11, 45);
+}
+img{
+    width: 15%;
+   height: 200px;
+   margin-top: 60px;
+   border-radius: 50%;
+   border: 5px solid palegoldenrod;
+  
+
+}
+#footer{
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 40px;
+    text-align: center;
+    color: palegoldenrod;
+    background-color:rgb(100, 11, 45) ;
+}
+java
+function dobijanjezvuka(zivotinja) {
+    var zvuk = new Audio("audio/" + zivotinja + ".mp3");
+    zvuk.play();
+}
+function stisni(zivotinja){
+    window.open("pages/" + zivotinja + ".html", "mywindow","height=200;width=200");
+}
