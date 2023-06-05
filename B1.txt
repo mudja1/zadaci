@@ -1,0 +1,149 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication1
+{
+    public partial class _Default : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+        public void text()
+        {
+            if(Image1.ImageUrl== "~/Slike/nemacka.jpg")
+            {
+                TextBox1.Text = "nemacka";
+            }
+            else if(Image1.ImageUrl == "~/Slike/norveska.jpg")
+            {
+                TextBox1.Text = "norveska";
+            }
+            else if (Image1.ImageUrl == "~/Slike/francuska.jpg")
+            {
+                TextBox1.Text = "francuska";
+            }
+            else if (Image1.ImageUrl == "~/Slike/turska.jpg")
+            {
+                TextBox1.Text = "turska";
+            }
+            else if (Image1.ImageUrl == "~/Slike/grcka.jpg")
+            {
+                TextBox1.Text = "grcka";
+            }
+            else if (Image1.ImageUrl == "~/Slike/rumunija.jpg")
+            {
+                TextBox1.Text = "rumunija";
+            }
+            else if (Image1.ImageUrl == "~/Slike/italija.jpg")
+            {
+                TextBox1.Text = "italija";
+            }
+            else if (Image1.ImageUrl == "~/Slike/makedonija.jpg")
+            {
+                TextBox1.Text = "makedonija";
+            }
+            else if (Image1.ImageUrl == "~/Slike/njujork.jpg")
+            {
+                TextBox1.Text = "njujork";
+            }
+            else if (Image1.ImageUrl == "~/Slike/egipat.jpg")
+            {
+                TextBox1.Text = "egipat";
+            }
+            else
+            {
+                TextBox1.Text = "";
+            }
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            string temp = Image1.ImageUrl;
+            Image1.ImageUrl = ImageButton1.ImageUrl;
+            ImageButton1.ImageUrl = temp;
+            text();
+        }
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            string temp = Image1.ImageUrl;
+            Image1.ImageUrl = ImageButton2.ImageUrl;
+            ImageButton2.ImageUrl = temp;
+            text();
+        }
+
+        protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
+        {
+            string temp = Image1.ImageUrl;
+            Image1.ImageUrl = ImageButton3.ImageUrl;
+            ImageButton3.ImageUrl = temp;
+            text();
+        }
+
+        protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
+        {
+            string temp = Image1.ImageUrl;
+            Image1.ImageUrl = ImageButton4.ImageUrl;
+            ImageButton4.ImageUrl = temp;
+            text();
+        }
+
+        protected void ImageButton5_Click(object sender, ImageClickEventArgs e)
+        {
+            string temp = Image1.ImageUrl;
+            Image1.ImageUrl = ImageButton5.ImageUrl;
+            ImageButton5.ImageUrl = temp;
+            text();
+        }
+
+        protected void ImageButton6_Click(object sender, ImageClickEventArgs e)
+        {
+            string temp = Image1.ImageUrl;
+            Image1.ImageUrl = ImageButton6.ImageUrl;
+            ImageButton6.ImageUrl = temp;
+            text();
+        }
+
+        protected void ImageButton7_Click(object sender, ImageClickEventArgs e)
+        {
+            string temp = Image1.ImageUrl;
+            Image1.ImageUrl = ImageButton7.ImageUrl;
+            ImageButton7.ImageUrl = temp;
+            text();
+        }
+
+        protected void ImageButton8_Click(object sender, ImageClickEventArgs e)
+        {
+            string temp = Image1.ImageUrl;
+            Image1.ImageUrl = ImageButton8.ImageUrl;
+            ImageButton8.ImageUrl = temp;
+            text();
+        }
+
+        protected void ImageButton9_Click(object sender, ImageClickEventArgs e)
+        {
+            string temp = Image1.ImageUrl;
+            Image1.ImageUrl = ImageButton9.ImageUrl;
+            ImageButton9.ImageUrl = temp;
+            text();
+        }
+
+        protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
+        {
+            string temp = Image1.ImageUrl;
+            Image1.ImageUrl = ImageButton10.ImageUrl;
+            ImageButton10.ImageUrl = temp;
+            text();
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
