@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Србија и њени суседи</title>
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="css/css.css">
+    <script type="text/javascript" src="js/js.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>ОСНОВНА ШКОЛА "СОЊА МАРИНКОВИЋ"</h1>
+ 
+    <ul>
+        <li><a href="#">Почетна</a></li>
+        <li><a href="oautoru.html">O aутору</a></li>
+        <li><a href="uputstvo.html">Упутство</a></li>
+        </ul>
+   <h2>Србија и њени суседи</h2>
+
+   
+   
+    <p class="verticalno">ГЕОГРАФИЈА</p>
+
+    <img class="center" src="slike/karta.jpg" >
+    <div class="madjarska">
+        <a onmouseover="PlaySound('madjarska')" onmouseout="StopSound('madjarska')"><img src="slike/madjarska.png" width="50px" height="50px"></a>
+        <p class="tt" style="text-align:center;color:green;"   onclick="Madjarska()">Мађарска</p>
+      </div>
+      
+      <div class="hrvatska">
+        <a onmouseover="PlaySound('hrvatska')" onmouseout="StopSound('hrvatska')"><img src="slike/hrvatska.jpg" width="50px" height="50px"></a>
+          <p class="tt" onclick="Hrvatska()">Хрватска</p>
+         </div>
+         <div class="bih">
+            <a onmouseover="PlaySound('bih')" onmouseout="StopSound('bih')"><img src="slike/bih.jpg" width="50px" height="50px"></a>
+             <p class="tt" onclick="Bih()">Босна и Хергеговина</p>
+         </div>
+         <div class="cg">
+            <a onmouseover="PlaySound('cg')" onmouseout="StopSound('cg')">  <img src="slike/cg.jpg" width="50px" height="50px"></a>
+             <p class="tt" onclick="Cg()">Црна Гора</p>
+         </div>
+         <div class="albanija">
+            <a onmouseover="PlaySound('albanija')" onmouseout="StopSound('albanija')"> <img src="slike/albanija.jpg" width="50px" height="50px"></a>
+            <p class="tt" onclick="Albanija()">Aлбанија</p>
+        </div>
+        <div class="makedonija">
+            <a onmouseover="PlaySound('makedonija')" onmouseout="StopSound('makedonija')"><img src="slike/makedonija.png" width="50px" height="50px"></a>
+            <p class="tt"  onclick="Makedonija()">Maкедонија</p>
+        </div>
+        <div class="srbija">
+            <a onmouseover="PlaySound('srbija')" onmouseout="StopSound('srbija')">  <img  src="slike/srbija.jpg" width="50px" height="50px"></a>
+            <p class="tt" onclick="Srbija()">Србија</p>
+        </div>
+        <div class="bugarska">
+            <a onmouseover="PlaySound('bugarska')" onmouseout="StopSound('bugarska')"> <img src="slike/bugarska.jpg"width="50px" height="50px"></a>
+            <p class="tt" onclick="Bugarska()">Бугарска</p>
+        </div>
+        <div class="rumunija">
+            <a onmouseover="PlaySound('rumunija')" onmouseout="StopSound('rumunija')"> <img src="slike/rumunija.jpg"width="50px" height="50px"></a>
+            <p class="tt" onclick="Rumunija()">Румунија</p>
+        </div>
+    
+        <div id="footer">  
+            Copyright © Основна школа "Соња Маринковић"
+        </div>
+    <audio id='madjarska' src='audio/madjarska.mp3'>
+        <audio id='hrvatska' src='audio/hrvatska.mp3'>
+        <audio id='bih' src='audio/bih.mp3'>
+            <audio id='cg' src='audio/cg.mp3'>
+        <audio id='albanija' src='audio/albanija.mp3'>
+        <audio id='makedonija' src='audio/makedonija.mp3'>
+            <audio id='srbija' src='audio/srbija.mp3'>
+                <audio id='bugarska' src='audio/bugarska.mp3'>
+                <audio id='rumunija' src='audio/rumunija.mp3'>
+css
+body, html {
+    height: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(253, 255, 145);
+  }
+  
+  
+  h1,h2{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+
+}
+.tt{
+    text-align: center;
+    font-size: 20px;
+    margin-left: 0;
+    margin-right: 50%;
+    color: green;
+    font-weight: bold;
+    padding: 2%;
+    border-radius: 5px;
+    
+}
+ul{
+  text-align: center; 
+  background-color: rgb(160, 250, 172);
+}
+ul li{list-style: none; display: inline-block;
+
+}
+ul a{
+  color: green; display: block; font-family:arial; text-transform: uppercase; font-weight: bold; margin: 0; padding: 9px 18px 9px; text-decoration: none; 
+}
+ul a:hover{
+  background-color: rgb(35, 82, 42);
+  color: rgb(248, 248, 120);
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.madjarska{
+position:absolute;
+width:100px;
+height:100px;
+top:200px;
+right:0;
+left:480px;
+}
+.hrvatska{
+  position:absolute;
+  width:100px;
+  height:100px;
+  top:400px;
+  right:0;
+  left:430px;
+  }
+  .bih{
+    position:absolute;
+  width:100px;
+  height:100px;
+  top:650px;
+  right:0;
+  left:430px;
+  }
+.cg{
+  position:absolute;
+  width:100px;
+  height:100px;
+  top:880px;
+  right:0;
+  left:480px;
+  }
+  .albanija{
+    position:absolute;
+    width:100px;
+    height:100px;
+    top:1100px;
+    right:0;
+    left: 600px;
+    }
+    .makedonija{
+
+      position:absolute;
+      width:100px;
+      height:100px;
+      top:1110px;
+      right:0;
+      left: 900px;
+      }
+      .srbija{
+        position:absolute;
+  width:100px;
+  height:100px;
+  top: 650px;
+  right:0;
+  left: 700px; 
+      }
+      .bugarska{
+        position:absolute;
+  width:100px;
+  height:100px;
+  top:950px;
+  right:0;
+  left: 1100px; 
+      }
+      .rumunija{
+        position:absolute;
+  width:100px;
+  height:100px;
+  top:400px;
+  right:0;
+  left:1000px;
+      }
+      #footer{
+    
+     bottom: 0;
+        text-align: center;
+        color: palegoldenrod;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        color: palegoldenrod;
+        background-color:rgb(35, 82, 42) ;
+    }
+ 
+  p{
+    text-align: center;
+    color: green;
+    font-weight: bold;
+  }
+  .verticalno{
+    writing-mode: vertical-lr;
+  text-orientation: upright;
+  position: absolute;
+  font-size: 80px;
+  left: 200px;
+  text-shadow: 2px 2px 8px black;
+  color: #2c5e08;
+  }
+java
+function Srbija() {
+    window.open(
+      "stranice/srbija.html", "_blank","width=200,height=200");
+}
+
+function Madjarska() {
+    window.open(
+      "stranice/madjarska.html", "_blank","width=200,height=200");
+}
+
+function Hrvatska() {
+    window.open(
+      "stranice/hrvatska.html", "_blank","width=200,height=200");
+}
+
+function Bih() {
+    window.open(
+      "stranice/bih.html", "_blank","width=200,height=200");
+}
+
+function Cg() {
+    window.open(
+      "stranice/cg.html", "_blank","width=200,height=200");
+}
+
+function Albanija() {
+    window.open(
+      "stranice/albanija.html", "_blank","width=200,height=200");
+}
+
+function Makedonija() {
+    window.open(
+      "stranice/makedonija.html", "_blank","width=200,height=200");
+}
+
+function Bugarska() {
+    window.open(
+      "stranice/bugarska.html", "_blank","width=200,height=200");
+}
+
+function Rumunija() {
+    window.open(
+      "stranice/rumunija.html", "_blank","width=200,height=200");
+}
+function PlaySound(soundobj) {
+    var thissound=document.getElementById(soundobj);
+    thissound.play();
+}
+
+function StopSound(soundobj) {
+    var thissound=document.getElementById(soundobj);
+    thissound.pause();
+    thissound.currentTime = 0;
+}
