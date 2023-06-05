@@ -1,0 +1,13 @@
+ protected void insert()
+        {
+            XmlTextReader reader = new XmlTextReader(Server.MapPath("/XMLL/XMLFile1.xml"));
+            DataSet ds = new DataSet();
+            ds.ReadXml(reader);
+            DataView dv = new DataView(ds.Tables[0]);
+            DataTable dt = dv.Table;
+            dt.DefaultView.Sort = "citano DESC";
+            dt = dt.DefaultView.ToTable(true);
+            reader.Close();
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+        }
