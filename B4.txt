@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Б4</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body onload="interval()">
+    <div>
+        <h1 class="skola">Основна школа "Соња Маринковић"</h1>
+        <nav>
+          <ul class="nav-links">
+            <li class="active"><a class="nav-link">Почетна</a></li>
+            <li><a class="nav-link"  href="oautoru.html">О аутору</a></li>
+            <li><a class="nav-link" href="uputstvo.html">Упутство</a></li>
+          </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div>
+            <h2 class="vertical-text">Пикасо</h2>
+        </div>
+        <div class="slide">
+            <div>
+                <div id="slike">
+                    <img src="images/001.jpg" class="active slika"></img>
+                    <img src="images/002.jpg" class="d-none slika"></img>
+                    <img src="images/003.jpg" class="d-none slika"></img>
+                    <img src="images/004.jpg" class="d-none slika"></img>
+                    <img src="images/005.jpg" class="d-none slika"></img>
+                </div>
+            </div>
+            <div>
+                <h3 class="title">Стари гитариста</h3>
+                <p class="godina">1903</p>
+                <p class="desc">Стари гитариста је насликан 1903. године, непосредно након самоубилачке смрти Пикасовог блиског пријатеља, Касагемаса. За то време, уметник је био саосећајан са невољама потлачених и насликао је многа платна која приказују беду сиромашних, болесних и избачених из друштва. И он је знао како је то бити осиромашен, пошто је био готово без новца током целе 1902. Ово дело је настало у Мадриду, а изобличен стил (имајте на уму да горњи торзо гитаристе изгледа заваљен, док се доња половина појављује бити седећи прекрштених ногу) подсећа на дела Ел Грека.</p>
+            </div>
+        </div>
+    </div>
+    <div class="tackice">
+        <span class="tacka"></span>
+        <span class="tacka"></span>
+        <span class="tacka"></span>
+        <span class="tacka"></span>
+        <span class="tacka"></span>
+    </div>
+
+
+    <footer>
+        <p>Copyright &#169; Основна школа "Соња Маринковић" </p>
+        
+       
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
+css
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fefa99;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navigacija */
+.skola {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    margin: 16px 0;
+    color: #457f33;
+    font-weight: 500;
+    text-shadow: 2px 2px 8px;
+}
+
+nav {
+    width: 100%;
+    height: 6vh;
+    margin: auto;
+    background-color: #c4fea9;
+    color: #457f33;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 70%;
+    margin: auto;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: calc(100%/3);
+    height: 100%;
+}
+
+.nav-links li:hover {
+    background-color: #457f33;
+    color: #c4fea9;
+}
+
+li.active {
+    background-color: #457f33;
+    color: #c4fea9;
+}
+
+/* Pocetna */
+
+.vertical-text {
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    font-size: 4.5rem;
+    color: #457f33;
+    font-weight: 300;
+    text-shadow: 2px 2px 8px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    height: 70vh;
+    margin: auto;
+}
+
+.d-none {
+    display: none;
+}
+
+.slide {
+    background-color: #c4fea9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    height: 600px;
+    text-align: center;
+}
+
+#slike {
+    height: 600px;
+}
+
+.slide img {
+    height: 600px;
+    aspect-ratio: 10/16;
+    animation-name: animacija;
+    animation-duration: 1s;
+}
+
+.slide h3 {
+    font-size: 3rem;
+    color: #457f33;
+    font-weight: 500;
+    text-shadow: 2px 2px 8px;
+}
+
+.slide .godina {
+    font-size: 4rem;
+    color: grey;
+    opacity: 0.7;
+    font-family: 'Dancing Script', cursive;
+}
+
+.slide .desc {
+    padding: 10px 40px;
+}
+
+.tacka {
+    height: 20px;
+    width: 20px;
+    background-color: #c4fea9;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.tackice {
+    text-align: center;
+}
+
+@keyframes animacija {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.tacka.activeT {
+    background-color: #457f33;
+}
+
+/*Footer*/
+
+footer {
+    background-color: #457f33;
+    color: #fefa99;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+let slike = [
+    {
+        title: "Стари гитариста",
+        godina: "1903",
+        desc: "Стари гитариста је насликан 1903. године, непосредно након самоубилачке смрти Пикасовог блиског пријатеља, Касагемаса. За то време, уметник је био саосећајан са невољама потлачених и насликао је многа платна која приказују беду сиромашних, болесних и избачених из друштва. И он је знао како је то бити осиромашен, пошто је био готово без новца током целе 1902. Ово дело је настало у Мадриду, а изобличен стил (имајте на уму да горњи торзо гитаристе изгледа заваљен, док се доња половина појављује бити седећи прекрштених ногу) подсећа на дела Ел Грека."
+    },
+    {
+        title: "Жаклин са цвећем",
+        godina: "1954",
+        desc: "Жаклин са цвећем, 1954. слави улазак Пикасове нове сапутнице, Жаклин Рок, у његову слику. Антонина Валентин ту фигуру назива „модерном сфингом“, а истина је да у овом чучећем положају, са својим дугим вратом и бадемастим очима, Жаклин има нешто од митске фигуре. Допала јој се ова позиција за седење, а то ће се поново видети на каснијим портретима, укључујући серију „Одалиске”. Када ју је Пикасо први пут срео, био је запањен њеном сличношћу са женом са наргилом из Делакроа Алжирских жена. У њој је видео исту ону класичну, медитеранску врсту лепоте коју је почео да слика у Гасолу."
+    },
+    {
+        title: "Девојка са мандолином",
+        godina: "1910",
+        desc: "Године 1910. Пикасо и Фернанде Оливије провели су летњи одмор у Кадакесу, и ту је настала Жена са мандолином. Након што је изашао из ране кубистичке фазе која је дјеломично дјеловала експресивно, Пикасо је сада био у муци аналитичког кубизма, периода током којег је улагао површински украс са суштинском вриједношћу. На овој слици карактеристична фрагментација форме изведена је до готово непрепознатљивих дужина. Само је мандолину релативно лако идентификовати у доњим крајевима композиције.' И обриси фигуре и њен унутрашњи цртеж разбијени су на интерпенетративне геометријске елементе. У колориту доминирају смеђи тонови који бледе у беж. Плаво-сиви акценти, често директно супротстављени тамним, структурним линијама, прожимају слику пластичношћу попут фасета.",
+    },
+    {
+        title: "Сан (Ле Реве)",
+        godina: "1932",
+        desc: "Ле Реве (Сан на француском) је уљана слика из 1932. (130 × 97 цм) Пабла Пикаса, тада старог 50 година, која приказује његову 24-годишњу љубавницу Мари-Терез Валтер. Кажу да је насликан у једном поподневу, 24. јануара 1932. Припада Пикасовом периоду искривљених приказа, са превише поједностављеним обрисима и контрастним бојама које подсећају на рани фовизам.",
+    },
+    {
+        title: "Дора Маар ау Чат",
+        godina: "1941",
+        desc: "Дора Маар ау Чат представља уметникову најмистериознију и најизазовнију љубавницу, краљевски позирану три четвртине дужине у великој дрвеној столици са малом црном мачком која седи иза ње у забавном и претећем ставу. Фасетиране равни њеног тела и богато слојевита површина потеза дају овом портрету монументалан и скулптурални квалитет. Слика је такође изузетна по својој блиставости боја и сложеном и густом узорку хаљине модела. Моћна фигура смештена је у драматичну, али једноставну поставку састављену од вртоглаво нагнуте равни дрвених подних дасака и плитког унутрашњег простора који је распоређен на начин који подсећа на најраније Пикасове манипулације простором на кубистички начин."
+    }
+];
+
+function interval() {
+    tackice[i].classList.add("activeT");
+    setInterval(slider, 3000);
+}
+
+let tackice = document.querySelectorAll(".tacka");
+
+let i = 0;
+
+let slikeEl = document.querySelectorAll(".slika");
+
+let naslov = document.querySelector(".title");
+let godina = document.querySelector(".godina");
+let desc = document.querySelector(".desc");
+
+function slider() {
+    i + 1 < 5 ? i++ : i = 0;
+    naslov.innerHTML = slike[i].title;
+        godina.innerHTML = slike[i].godina;
+        desc.innerHTML = slike[i].desc;
+        slikeEl.forEach(function(slika) {
+            if(slika.classList.contains("active")) {
+                slika.classList.remove("active");
+                slika.classList.add("d-none");
+            }
+        })
+
+        tackice.forEach(function(tacka) {
+            if(tacka.classList.contains("activeT")) {
+                tacka.classList.remove("activeT");
+            }
+        })
+        
+        tackice[i].classList.add("activeT")
+        slikeEl[i].classList.add("active");
+        slikeEl[i].classList.remove("d-none");
+}
+
+
