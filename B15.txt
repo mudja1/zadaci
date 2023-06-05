@@ -1,0 +1,86 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace _1
+{
+    public partial class _Default : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+        public void Popuni()
+        {
+
+            if (DropDownList1.SelectedIndex > -1)
+            {
+                string putanja = Server.MapPath($"~/TXT/{DropDownList1.SelectedValue}.txt");
+                string[] linije = File.ReadAllLines(putanja);
+                foreach (string linija in linije)
+                {
+                    if (linija.StartsWith("SMER"))
+                    {
+                        string smer = linija.Remove(0, 5);
+                        DropDownList2.Items.Add(smer);
+                    }
+                }
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            GridView1.DataSource = null;
+            GridView1.DataBind();
+            DataSet ds = new DataSet();
+            ds.Tables.Add(new DataTable());
+            ds.Tables.Add(new DataTable());
+            ds.Tables[0].Columns.Add("RBR", typeof(string));
+            ds.Tables[0].Columns.Add("Polazak", typeof(string));
+            ds.Tables[1].Columns.Add("RBR", typeof(string));
+            ds.Tables[1].Columns.Add("Polazak", typeof(string));
+
+            if (DropDownList1.SelectedIndex > -1 && DropDownList2.SelectedIndex > -1)
+            {
+                string putanja = Server.MapPath($"~/TXT/{DropDownList1.SelectedValue}.txt");
+                string[] linije = File.ReadAllLines(putanja);
+                int i = -1, j = 0;
+                foreach (string linija in linije)
+                {
+
+                    if (linija.StartsWith("SMER"))
+                    {
+                        i++;
+                        j = 0;
+                    }
+                    else
+                    {
+                        j++;
+                        ds.Tables[i].Rows.Add(j, linija);
+                    }
+                }
+                if (DropDownList2.SelectedIndex == 0)
+                {
+                    GridView1.DataSource = ds.Tables[0];
+                    GridView1.DataBind();
+                }
+                else if (DropDownList2.SelectedIndex == 1)
+                {
+                    GridView1.DataSource = ds.Tables[1];
+                    GridView1.DataBind();
+                }
+            }
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList2.Items.Clear();
+            Popuni();
+        }
+    }
+}

@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.IO;
+
+
+namespace B14
+{
+    public partial class _Default : Page
+    {
+        DataTable table = new DataTable();
+       
+        protected void Page_Load(object sender, EventArgs e)
+        {
+          if (!IsPostBack)
+            {
+                drpDatum.Text = String.Empty;
+                drpTip.Text = String.Empty;
+            }
+            table.Columns.Add("Vreme", typeof(string));
+            table.Columns.Add("Naziv emisije", typeof(string));
+            table.Columns.Add("Tip emisije", typeof(string));
+        }
+
+        protected void btnPronadji_Click(object sender, EventArgs e)
+        {
+            string datum = "~/Tekst/" + drpDatum.SelectedItem.Value;
+            string putanja = Server.MapPath(datum);
+            string[] podaci = File.ReadAllLines(putanja);
+            foreach (string podatak in podaci)
+            {
+                string[] kolone = podatak.Split('|');
+                table.Rows.Add(kolone[0], kolone[1], kolone[3]);
+            }
+            string tip = drpTip.SelectedItem.Text;
+            //DataView pretraga = new DataView(table);
+            //pretraga.RowFilter = "[Tip emisije] LIKE '%" + tip + "%'";
+            table.DefaultView.RowFilter = "[Tip emisije] LIKE '%" + tip + "%'";
+            table.DefaultView.ToTable();
+            dataTV.DataSource = table;
+            dataTV.DataBind();
+        }
+
+        protected void drpDatum_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string datum = "~/Tekst/" + drpDatum.SelectedItem.Value;
+            string putanja = Server.MapPath(datum);
+            string[] podaci = File.ReadAllLines(putanja);
+            foreach (string podatak in podaci)
+            {
+                string[] kolone = podatak.Split('|');
+                table.Rows.Add(kolone[0], kolone[1], kolone[3]);
+            }
+            dataTV.DataSource = table;
+            dataTV.DataBind();
+        }
+    }
+}
+

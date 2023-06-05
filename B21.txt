@@ -1,0 +1,212 @@
+CSS:
+* {
+    margin: auto;
+}
+
+body {
+    background-color:white;
+}
+h1{
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+  
+
+  .oautoru {
+      font-size: xx-large;
+  }
+
+  label {
+    color:black;
+  }
+table{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+ table, tr, td {
+
+   border: 1px solid black;
+   color: black;
+   border-collapse: collapse;
+ }
+
+ td {
+  padding: 15px;
+ }
+
+ th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 15px;
+  background-color: rgb(224, 224, 224);
+ }
+
+ th a {
+   text-decoration: underline;
+   color: purple;
+ }
+ 
+ 
+ hr{
+  clear: both;
+  margin-bottom: 0px;
+  border: 0;
+  height: 6px;
+  background-image: linear-gradient(to right, white, transparent, white), linear-gradient(transparent, rgba(0,0,0,0.55) 150%);    
+ background-image: -moz-linear-gradient(to right, white, transparent, white), -webkit-linear-gradient(transparent, rgba(0,0,0,0.55) 150%);
+ background-image: -ms-linear-gradient(to right, white, transparent, white), -webkit-linear-gradient(transparent, rgba(0,0,0,0.55) 150%);
+margin-left: 100px;
+  margin-right: 100px;
+ }
+ .footer{
+  background-color: #264c73;
+  color: rgb(255, 255, 255);
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+
+ }
+ .vl{
+  background-color: white;
+  height: 58px;
+  width: 1px;
+  position: absolute;
+ }
+
+
+
+ #header {
+  background-color: #264c73;
+  color: rgb(255, 255, 255);
+  width: 100%;
+ }
+
+
+
+
+
+ #header div{
+  display: inline-block;
+ }
+
+ #header .text {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: fit-content;
+  margin: 0px;
+  font-size: large;
+ }
+.footer div{
+  display: inline-block;
+ }
+
+ .footer .text {
+  
+  width: fit-content;
+  margin: 0px;
+  font-size: large;
+ }
+ .footer a{
+   margin-right: 40px;
+   float: right;
+   color: white;
+   font-size: large;
+
+ }
+JS:
+var ime = 1;
+var prezime = 1;
+var rbr = 1;
+function Sortiraj(x){
+  	var n = 3; 
+	var k;
+	if(x=="ime"){
+		k=ime;
+		ime *= -1;
+	} 
+	else if(x=="prezime"){
+		k=prezime;
+		prezime *= -1;
+	} 
+	else if(x=="rbr"){
+		k=rbr;
+		rbr *= -1;
+	} 	
+  	for(var i=0;i<n-1;i++){
+    	for(var j=i+1;j<n;j++){ 
+     		var p1=document.getElementById(x+String(i+1)).innerText;
+     		var p2=document.getElementById(x+String(j+1)).innerText;
+			if(p1.localeCompare(p2)==k){
+				p1=document.getElementById("ime"+String(i+1)).innerText;
+				p2=document.getElementById("ime"+String(j+1)).innerText;
+				document.getElementById("ime"+String(i+1)).innerText=p2;
+				document.getElementById("ime"+String(j+1)).innerText=p1;
+				p1=document.getElementById("prezime"+String(i+1)).innerText;
+				p2=document.getElementById("prezime"+String(j+1)).innerText;
+				document.getElementById("prezime"+String(i+1)).innerText=p2;
+				document.getElementById("prezime"+String(j+1)).innerText=p1;
+				p1=document.getElementById("rbr"+String(i+1)).innerText;
+				p2=document.getElementById("rbr"+String(j+1)).innerText;
+				document.getElementById("rbr"+String(i+1)).innerText=p2;
+				document.getElementById("rbr"+String(j+1)).innerText=p1;
+			}
+    	} 
+	}
+}
+INDEX:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocetna</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+    
+    <div id="header">
+       <div class="text">Zadatak 21</div><div class="vl"></div><div class="text">Sortiranje tabele</div>
+    </div>
+    <h1>SORTIRANJE TABELE</h1>
+    <hr>
+    <table id="MojaTabela">
+        <tr>
+        <th><a href="#" onclick="Sortiraj('rbr');">Rbr</a></th>
+        <th><a href="#" onclick="Sortiraj('ime');">Ime</th>
+        <th><a href="#" onclick="Sortiraj('prezime');">Prezime</th> 
+        </tr>
+        <tr id="red1">
+        <td id="rbr1">1.</td>
+        <td id="ime1">Pera</td>
+        <td id="prezime1">Mikic</td> 
+        </tr>
+        <tr id="red2">
+        <td id="rbr2">2.</td>
+        <td id="ime2">Mika</td>
+        <td id="prezime2">Zikic</td>
+        </tr>
+        <tr id="red3">
+        <td id="rbr3">3.</td>
+        <td id="ime3">Zika</td>
+        <td id="prezime3">Peric</td>
+        </tr>
+      
+
+    </table>
+    <div class="footer"><div class="text">Elektrotehnička škola "Nikola Tesla" Jagodina </div><span ><a href="oautoru.html">O autoru</a></span><span><a href="uputstvo.html">Uputstvo</a></span> </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.IO;
+namespace B17
+{
+    public partial class VebProdavnica : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                DataTable table = new DataTable();
+                List<string> pl = new List<string>();
+                List<string> kl = new List<string>();
+                List<string> ekl = new List<string>();
+                List<string> rl = new List<string>();
+                List<string> sl = new List<string>();
+                List<string> procl = new List<string>();
+                pl.Add("");
+                kl.Add("");
+                ekl.Add("");
+                rl.Add("");
+                sl.Add("");
+                procl.Add("");
+
+                table.Columns.Add("Slika", typeof(string));
+                table.Columns.Add("Karakteristike", typeof(string));
+                table.Columns.Add("Cena", typeof(string));
+
+                string putanja = Server.MapPath("~/TXT/vebprodavnica.txt");
+                string[] pasusi = File.ReadAllLines(putanja);
+                foreach (string pasus in pasusi)
+                {
+                    DataRow dr = table.NewRow();
+                    dr["Slika"] = pasus.Substring(90, 30);
+                    string p, r, proc, ek, k, s, n;
+                    ek = pasus.Substring(80, 10);
+                    k = pasus.Substring(70, 10);
+                    proc = pasus.Substring(55, 15);
+                    r = pasus.Substring(50, 5);
+                    p = pasus.Substring(30, 20);
+                    n = pasus.Substring(5, 25);
+                    s = pasus.Substring(0, 5);
+                    pl.Add(p);
+                    kl.Add(k);
+                    ekl.Add(ek);
+                    rl.Add(r);
+                    sl.Add(s);
+                    procl.Add(proc);
+
+
+                    dr["Karakteristike"] = "<strong>" +p+ n + "</strong>" +"</br>" + "</br>" + "Proizvodjac: " + p + "</br>" + "Ram: " + r + "</br>" + "Procesor: " + proc + "</br>" + "Ekran: " + ek + "</br>" + "Kamera: " + k + "</br>" + "Sifra: " + s + "</br>";
+
+                    dr["Cena"] = pasus.Substring(120, 10);
+
+                    table.Rows.Add(dr);
+                }
+
+                IEnumerable<string> lp = pl.Distinct();
+                foreach (string pr in lp)
+                    ddlProzivodjac.Items.Add(pr);
+                IEnumerable<string> lk = kl.Distinct();
+                foreach (string kamera in lk)
+                    ddlKamera.Items.Add(kamera);
+                IEnumerable<string> lek = ekl.Distinct();
+                foreach (string ekran in lek)
+                    ddlEkran.Items.Add(ekran);
+                IEnumerable<string> lr = rl.Distinct();
+                foreach (string ram in lr)
+                    ddlRam.Items.Add(ram);
+
+                //IEnumerable<string> ls = sl.Distinct();
+                //foreach (string sif in ls)
+                //    ddlSifra.Items.Add(sif);
+                IEnumerable<string> lproc = procl.Distinct();
+                foreach (string proces in lproc)
+                    ddlProcesor.Items.Add(proces);
+
+                Session["table"] = table;
+                GridView1.DataSource = table;
+                GridView1.DataBind();
+            }
+        }
+
+        protected void btnTrazi_Click(object sender, EventArgs e)
+        {
+
+            DataTable dtable = (DataTable)Session["table"];
+            DataRow[] row;
+            string izvo = "", naz = "", zanr = "", god = "", izd = "", slika = "";
+
+            if (ddlProzivodjac.Text != "")
+            {
+                izvo = "Karakteristike LIKE '%" + ddlProzivodjac.Text + "%' AND ";
+            }
+            if (ddlKamera.Text != "")
+            {
+                naz = "Karakteristike LIKE '%" + ddlKamera.Text + "%' AND ";
+            }
+            if (ddlEkran.Text != "")
+            {
+                zanr = "Karakteristike LIKE '%" + ddlEkran.Text + "%' AND ";
+            }
+            if (ddlRam.Text != "")
+            {
+                god = "Karakteristike LIKE '%" + ddlRam.Text + "%' AND ";
+            }
+            if (ddlProcesor.Text != "")
+            {
+                izd = "Karakteristike LIKE '%" + ddlProcesor.Text + "%' AND ";
+            }
+
+            string s = izvo + naz + zanr + god + izd + slika;
+
+            if (s != "")
+            {
+                s = s.Substring(0, s.Length - 4);
+            }
+            row = dtable.Select(s);
+            DataTable NDT = dtable.Clone();
+            foreach (DataRow red in row)
+            {
+                NDT.ImportRow(red);
+            }
+
+            GridView1.DataSource = NDT;
+            GridView1.DataBind();
+
+
+        }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            
+        }
+    }
+}

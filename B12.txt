@@ -1,0 +1,506 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+
+namespace WebApplication1
+{
+    public partial class _Default : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button53_Click(object sender, EventArgs e)
+        {
+            SqlConnection konekcija = new SqlConnection();
+            konekcija.ConnectionString = @"Data Source = 10.81.73.2,49166; Initial Catalog = Nadja_Jaksic_E34_W; User ID = Nadja_Jaksic_E34; Password = Nadja_Jaksic_E34;";
+            konekcija.Open();
+            SqlCommand komanda = new SqlCommand();
+            komanda.Connection = konekcija;
+            komanda.CommandText = "Update [Rezervacija] set Rezervacija=1 where BrojSedista=@br";
+            komanda.Parameters.AddWithValue("@br", Convert.ToInt32(TextBox1.Text));
+            komanda.ExecuteNonQuery();
+            konekcija.Close();
+            if (Button1.Text == TextBox1.Text)
+            {
+                Button1.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button2.Text == TextBox1.Text)
+            {
+                Button2.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button3.Text == TextBox1.Text)
+            {
+                Button3.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button4.Text == TextBox1.Text)
+            {
+                Button4.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button5.Text == TextBox1.Text)
+            {
+                Button5.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button6.Text == TextBox1.Text)
+            {
+                Button6.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button7.Text == TextBox1.Text)
+            {
+                Button7.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button8.Text == TextBox1.Text)
+            {
+                Button8.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button9.Text == TextBox1.Text)
+            {
+                Button9.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button10.Text == TextBox1.Text)
+            {
+                Button10.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button11.Text == TextBox1.Text)
+            {
+                Button11.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button12.Text == TextBox1.Text)
+            {
+                Button12.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button13.Text == TextBox1.Text)
+            {
+                Button13.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button14.Text == TextBox1.Text)
+            {
+                Button14.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button15.Text == TextBox1.Text)
+            {
+                Button15.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button16.Text == TextBox1.Text)
+            {
+                Button16.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button17.Text == TextBox1.Text)
+            {
+                Button17.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button18.Text == TextBox1.Text)
+            {
+                Button18.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button19.Text == TextBox1.Text)
+            {
+                Button19.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button20.Text == TextBox1.Text)
+            {
+                Button20.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button21.Text == TextBox1.Text)
+            {
+                Button21.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button22.Text == TextBox1.Text)
+            {
+                Button22.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button23.Text == TextBox1.Text)
+            {
+                Button23.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button24.Text == TextBox1.Text)
+            {
+                Button24.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button25.Text == TextBox1.Text)
+            {
+                Button25.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button26.Text == TextBox1.Text)
+            {
+                Button26.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button27.Text == TextBox1.Text)
+            {
+                Button27.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button28.Text == TextBox1.Text)
+            {
+                Button28.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button29.Text == TextBox1.Text)
+            {
+                Button29.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button30.Text == TextBox1.Text)
+            {
+                Button30.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button31.Text == TextBox1.Text)
+            {
+                Button31.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button32.Text == TextBox1.Text)
+            {
+                Button32.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button33.Text == TextBox1.Text)
+            {
+                Button33.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button34.Text == TextBox1.Text)
+            {
+                Button34.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button35.Text == TextBox1.Text)
+            {
+                Button35.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button36.Text == TextBox1.Text)
+            {
+                Button36.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button37.Text == TextBox1.Text)
+            {
+                Button37.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button38.Text == TextBox1.Text)
+            {
+                Button38.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button39.Text == TextBox1.Text)
+            {
+                Button39.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button40.Text == TextBox1.Text)
+            {
+                Button40.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button41.Text == TextBox1.Text)
+            {
+                Button41.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button42.Text == TextBox1.Text)
+            {
+                Button42.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button43.Text == TextBox1.Text)
+            {
+                Button43.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button44.Text == TextBox1.Text)
+            {
+                Button44.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button45.Text == TextBox1.Text)
+            {
+                Button45.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button46.Text == TextBox1.Text)
+            {
+                Button46.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button47.Text == TextBox1.Text)
+            {
+                Button47.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button48.Text == TextBox1.Text)
+            {
+                Button48.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button49.Text == TextBox1.Text)
+            {
+                Button49.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button50.Text == TextBox1.Text)
+            {
+                Button50.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button51.Text == TextBox1.Text)
+            {
+                Button51.BackColor = System.Drawing.Color.Red;
+            }
+            if (Button52.Text == TextBox1.Text)
+            {
+                Button52.BackColor = System.Drawing.Color.Red;
+            }
+            TextBox1.Text = " ";
+            TextBox2.Text = " ";
+            TextBox3.Text = " ";
+        }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button3.Text;
+        }
+
+        protected void Button28_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button28.Text;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button1.Text;
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button2.Text;
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button4.Text;
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button5.Text;
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button6.Text;
+        }
+
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button7.Text;
+        }
+
+        protected void Button8_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button8.Text;
+        }
+
+        protected void Button9_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button9.Text;
+        }
+
+        protected void Button10_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button10.Text;
+        }
+
+        protected void Button11_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button11.Text;
+        }
+
+        protected void Button12_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button12.Text;
+        }
+
+        protected void Button13_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button13.Text;
+        }
+
+        protected void Button14_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button14.Text;
+        }
+
+        protected void Button15_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button15.Text;
+        }
+
+        protected void Button16_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button16.Text;
+        }
+
+        protected void Button17_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button17.Text;
+        }
+
+        protected void Button18_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button18.Text;
+        }
+
+        protected void Button19_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button19.Text;
+        }
+
+        protected void Button20_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button20.Text;
+        }
+
+        protected void Button21_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button21.Text;
+        }
+
+        protected void Button22_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button22.Text;
+        }
+
+        protected void Button23_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button23.Text;
+        }
+
+        protected void Button24_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button24.Text;
+        }
+
+        protected void Button25_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button25.Text;
+        }
+
+        protected void Button26_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button26.Text;
+        }
+
+        protected void Button27_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button27.Text;
+        }
+
+        protected void Button29_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button29.Text;
+        }
+
+        protected void Button30_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button30.Text;
+        }
+
+        protected void Button31_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button31.Text;
+        }
+
+        protected void Button32_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button32.Text;
+        }
+
+        protected void Button33_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button33.Text;
+        }
+
+        protected void Button34_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button34.Text;
+        }
+
+        protected void Button35_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button35.Text;
+        }
+
+        protected void Button36_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button36.Text;
+        }
+
+        protected void Button37_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button37.Text;
+        }
+
+        protected void Button38_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button38.Text;
+        }
+
+        protected void Button39_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button39.Text;
+        }
+
+        protected void Button40_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button40.Text;
+        }
+
+        protected void Button41_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button41.Text;
+        }
+
+        protected void Button42_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button42.Text;
+        }
+
+        protected void Button43_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button43.Text;
+        }
+
+        protected void Button44_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button44.Text;
+        }
+
+        protected void Button45_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button45.Text;
+        }
+
+        protected void Button46_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button46.Text;
+        }
+
+        protected void Button47_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button47.Text;
+        }
+
+        protected void Button48_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button48.Text;
+        }
+
+        protected void Button49_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button49.Text;
+        }
+
+        protected void Button50_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button50.Text;
+        }
+
+        protected void Button51_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button51.Text;
+        }
+
+        protected void Button52_Click(object sender, EventArgs e)
+        {
+            TextBox1.Text = Button52.Text;
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
