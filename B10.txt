@@ -1,0 +1,100 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+
+namespace _1
+{
+    public partial class Recnik : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection konekcija = new SqlConnection("Data Source=10.81.73.2,49166;Initial Catalog=Nadja_Jaksic_E34_W;User ID=Nadja_Jaksic_E34;Password=Nadja_Jaksic_E34");
+            konekcija.Open();
+            SqlCommand komanda = new SqlCommand();
+            komanda.Connection = konekcija;
+            if (DropDownList1.SelectedIndex == 1)
+            {
+                komanda.CommandText = "SELECT engleski, opis FROM Recnik WHERE srpski = @rec ";
+                komanda.Parameters.AddWithValue("@rec", TextBox1.Text);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                da.SelectCommand = komanda;
+                da.Fill(ds);
+                TextBox2.Text = ds.Tables[0].Rows[0][0].ToString();
+                TextBox3.Text = ds.Tables[0].Rows[0][1].ToString();
+            }
+            else
+            {
+                komanda.CommandText = "SELECT srpski, opis FROM Recnik WHERE srpski = @rec ";
+                komanda.Parameters.AddWithValue("@rec", TextBox1.Text);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                da.SelectCommand = komanda;
+                da.Fill(ds);
+                TextBox2.Text = ds.Tables[0].Rows[0][0].ToString();
+                TextBox3.Text = ds.Tables[0].Rows[0][1].ToString();
+            }
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TextBox1.Text = String.Empty;
+            TextBox2.Text = String.Empty;
+            TextBox3.Text = String.Empty;
+            if (DropDownList1.SelectedIndex == 1)
+            {
+              Label3.Text = "Srpska rec";
+                Label2.Text = "Engleska rec";
+            }
+            else
+            {
+                Label3.Text = "Engleska rec";
+                Label2.Text = "Srpska rec";
+            }
+        }
+    }
+}
+dodavanje
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+namespace _1
+{
+    public partial class Dodavanje : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection konekcija = new SqlConnection("Data Source=10.81.73.2,49166;Initial Catalog=Nadja_Jaksic_E34_W;User ID=Nadja_Jaksic_E34;Password=Nadja_Jaksic_E34");
+            konekcija.Open();
+            SqlCommand komanda = new SqlCommand();
+            komanda.Connection = konekcija;
+     
+            
+                komanda.CommandText = "INSERT INTO Recnik VALUES (@engleski, @srpski, @opis)";
+                komanda.Parameters.AddWithValue("@srpski", TextBox1.Text);
+                komanda.Parameters.AddWithValue("@engleski", TextBox2.Text);
+                komanda.Parameters.AddWithValue("@opis", TextBox3.Text);
+                komanda.ExecuteNonQuery();
+            
+        }
+    }
+}
